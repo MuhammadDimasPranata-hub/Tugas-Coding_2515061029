@@ -1,0 +1,108 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-C_x83NK1zhO",
+        "outputId": "0360b07c-bcae-425b-c15d-f8dbbee1ad94"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "3\n",
+            "(3,)\n",
+            "<class 'numpy.ndarray'>\n",
+            "<class 'numpy.int64'>\n",
+            "[ 9 29 61]\n",
+            "(3,)\n",
+            "[61 29  9]\n",
+            "3\n",
+            "tensor([ 9, 29, 61])\n",
+            "tensor([ 9, 29, 61])\n",
+            "3\n",
+            "tensor([61,  9, 29])\n",
+            "3\n",
+            "<tf.Variable 'Variable:0' shape=(3,) dtype=int32, numpy=array([ 9, 29, 61], dtype=int32)>\n",
+            "tf.Tensor([ 9 29 61], shape=(3,), dtype=int32)\n",
+            "3\n",
+            "<tf.Variable 'Variable:0' shape=(3,) dtype=int32, numpy=array([61,  9, 29], dtype=int32)>\n",
+            "<dtype: 'int32'>\n"
+          ]
+        },
+        {
+          "output_type": "stream",
+          "name": "stderr",
+          "text": [
+            "/tmp/ipykernel_1711/2375506543.py:20: UserWarning: The use of `x.T` on tensors of dimension other than 2 to reverse their shape is deprecated and it will throw an error in a future release. Consider `x.mT` to transpose batches of matrices or `x.permute(*torch.arange(x.ndim - 1, -1, -1))` to reverse the dimensions of a tensor. (Triggered internally at /pytorch/aten/src/ATen/native/TensorShape.cpp:4480.)\n",
+            "  x_pt_t = x_pt.T #tranpose x_pt dan masukkan ke x_pt_t\n"
+          ]
+        }
+      ],
+      "source": [
+        "import numpy as np #import numpy\n",
+        "x = np.array([9, 29, 61]) #inialisasi vektor\n",
+        "print(len(x)) #tampilkan panjang vektor\n",
+        "print(x.shape) #tampilkan bentuk vektor\n",
+        "print(type(x)) #tampilkan tipe data vektor\n",
+        "print(type(x[0])) #tampilkan tipe data dari elemen pertama\n",
+        "\n",
+        "x_t = x.T # tranpose x dan massukan dalam x_t\n",
+        "print(x_t) #tampilkan tranpose x\n",
+        "print(x_t.shape) #tampilkan bentuk tranpose x\n",
+        "y = np.array([61, 29, 9]) #inisialisasi variabel y\n",
+        "y_t = y.T #tranpose x dan masukkan ke y_t\n",
+        "print(y_t) #tampilkan tranpose y\n",
+        "print(len(y_t)) #tampilakan ukuran dari y_t\n",
+        "\n",
+        "import torch #import torch dari library\n",
+        "import tensorflow as tf #torch dari library\n",
+        "x_pt = torch.tensor([9, 29, 61]) #inisialisasi vektor menggunakan torch\n",
+        "print(x_pt) # tampilkan x_pt\n",
+        "x_pt_t = x_pt.T #tranpose x_pt dan masukkan ke x_pt_t\n",
+        "print(x_pt_t) #tampilkan x_pt_t\n",
+        "print(len(x_pt_t)) #tampilkan ukuran x_pt_t\n",
+        "y_pt = torch.tensor([61, 9, 29]) #inisialisasi vektor menggunakan torch\n",
+        "print(y_pt) # tampilkan y_pt\n",
+        "print(len(y_pt)) #tampilkan ukuran y_pt\n",
+        "\n",
+        "x_pt = tf.Variable([9, 29, 61]) #inisialisasi vektor menggunakan tf\n",
+        "print(x_pt) # tampilkan x_pt\n",
+        "x_pt_t = tf.transpose(x_pt) #tranpose x_pt dan masukkan ke x_pt_t\n",
+        "print(x_pt_t) #tampilkan x_pt_t\n",
+        "print(len(x_pt_t)) #tampilkan ukuran x_pt_t\n",
+        "y_pt = tf.Variable([61, 9, 29]) #inisialisasi vektor menggunakan tf\n",
+        "print(y_pt) # tampilkan y_pt\n",
+        "print(y_pt.dtype) #tampilkan ukuran y_pt"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "WXwntphpAdvt"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
