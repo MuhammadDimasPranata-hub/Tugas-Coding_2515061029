@@ -1,0 +1,77 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "MWLHJvtmMcB6",
+        "outputId": "3607acc6-0518-4ca4-e4b9-4c034cd61088"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[29  6]\n",
+            " [ 9 61]\n",
+            " [ 3  8]]\n",
+            "6\n",
+            "[29  9  3]\n",
+            "[ 9 61]\n",
+            "tensor([[29,  6],\n",
+            "        [ 9, 61],\n",
+            "        [ 3,  8]])\n",
+            "torch.Size([3, 2])\n",
+            "tensor([29,  9,  3])\n",
+            "tensor([ 9, 61])\n",
+            "<tf.Variable 'Variable:0' shape=(3, 2) dtype=int32, numpy=\n",
+            "array([[29,  6],\n",
+            "       [ 9, 61],\n",
+            "       [ 3,  8]], dtype=int32)>\n",
+            "(3, 2)\n",
+            "tf.Tensor([29  9  3], shape=(3,), dtype=int32)\n",
+            "tf.Tensor([ 9 61], shape=(2,), dtype=int32)\n"
+          ]
+        }
+      ],
+      "source": [
+        "import numpy as np #import numpy\n",
+        "x = np.array([[29, 6], [9, 61], [3, 8]]) #inisialisasi matrix berukuran 2x3\n",
+        "print(x) #tampilkan matrix\n",
+        "print(x.size) #tampilkan ukuran dari matrix X\n",
+        "print(x[:,0]) #tampilkan seluruh kolom pertama\n",
+        "print(x[1,:]) #tampilkan seluruh baris kedua\n",
+        "\n",
+        "import torch\n",
+        "import tensorflow as tf\n",
+        "x = torch.tensor([[29, 6], [9, 61], [3, 8]]) #inisialisasi matrix berukuran 2x3 menggunaakan torch\n",
+        "print(x) #tampilkan matrix\n",
+        "print(x.shape) #tampilkan ukuran dari matrix X\n",
+        "print(x[:,0]) #tampilkan seluruh kolom pertama\n",
+        "print(x[1,:]) #tampilkan seluruh baris kedua\n",
+        "x = tf.Variable([[29, 6], [9, 61], [3, 8]]) #inisialisasi matrix berukuran 2x3 menggunaakan tensorflow\n",
+        "print(x) #tampilkan matrix\n",
+        "print(x.shape) #tampilkan ukuran dari matrix X\n",
+        "print(x[:,0]) #tampilkan seluruh kolom pertama\n",
+        "print(x[1,:]) #tampilkan seluruh baris kedua"
+      ]
+    }
+  ]
+}
